@@ -1,15 +1,20 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import FAQ from '../components/FAQ';
 import ProductSize from '../components/ProductSize';
 import ProductThumbnail from '../components/ProductThumbnail';
 import { useParams } from 'react-router-dom';
 import Buy from '../components/Buy';
+import Recommended from '../components/Recommended';
 
 const ProductPage = ({ products, id }) => {
     const { url } = useParams()
     const product = products.find(elem => elem.url === url)
     const [mainImg, setMainImg] = useState(product.images[0])
     const [size, setSize] = useState(39)
+
+    useEffect(() => {
+        setMainImg(product.images[0])
+    }, [product])
 
     return (
         <main>
@@ -22,13 +27,14 @@ const ProductPage = ({ products, id }) => {
                             </figure>
                             <div className="product__thumbnails">
                                 {
-                                    product.images.map((img, index) => <ProductThumbnail setMainImg={setMainImg} image={img} selected={img === mainImg && true}/>)
+                                    product.images.map((img, index) => <ProductThumbnail setMainImg={setMainImg} image={img} selected={img === mainImg}/>)
                                 }
                             </div>
                         </div>
                         <div className="product__description">
                             <h4 className="product__sub-title">SNEAKER COMPANY</h4>
                             <h1 className="product__title">{product.title}</h1>
+                            <h3 className="product__category">Category: {product.category}</h3>
                             <p className="product__para">
                                 {product.description}
                             </p>
@@ -57,6 +63,7 @@ const ProductPage = ({ products, id }) => {
                     </div>
                 </div>
             </div>
+            <Recommended products={products} currProduct={product} />
             <FAQ />
         </main>
     );

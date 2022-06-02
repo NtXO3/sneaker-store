@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import CollectionHeader from '../components/CollectionHeader';
-import CollectionSideBar from '../components/CollectionSideBar'
+import CollectionSideBar from '../components/CollectionSideBar';
 import Sneaker from '../components/Sneaker';
 import SneakerSkeleton from '../components/SneakerSkeleton';
+import products from '../products';
 
-const MenCollection = ({ products }) => {
-    const initSneakers = products.filter(item => item.category === 'Men' || item.category === 'Unisex')
+const WomenCollection = () => {
+    const initSneakers = products.filter(item => item.category === 'Women' || item.category === 'Unisex')
     const [sneakers, setSneakers] = useState(initSneakers)
     const [filteredBrands, setFilteredBrands] = useState('')
+
     const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
@@ -19,13 +21,13 @@ const MenCollection = ({ products }) => {
     return (
         <>
             <CollectionHeader 
-                title='Heren Sneakers'
-                para="Hier vind je de nieuwste en tofste herencollecties sneakers. Wij zorgen ervoor dat je er zoals altijd weer fris bij kan lopen met de nieuwste items!"
+                title='Vrouwen Sneakers'
+                para="Hier vind je de nieuwste en tofste vrouwencollecties sneakers. Wij zorgen ervoor dat je er zoals altijd weer fris bij kan lopen met de nieuwste items!"
             />
             <main id="collection__body">
                 <div className="container">
                     <div className="collection__row">
-                        <CollectionSideBar sneakers={sneakers} setSneakers={setSneakers} filteredBrands={filteredBrands} setFilteredBrands={setFilteredBrands} category='Men' />
+                        <CollectionSideBar sneakers={sneakers} setSneakers={setSneakers} filteredBrands={filteredBrands} setFilteredBrands={setFilteredBrands} category='Women' />
                         <div className="sneakers">
                             {
                                 isLoading ?
@@ -41,4 +43,4 @@ const MenCollection = ({ products }) => {
     );
 }
 
-export default MenCollection;
+export default WomenCollection;

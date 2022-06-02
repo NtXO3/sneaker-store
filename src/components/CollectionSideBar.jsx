@@ -28,9 +28,9 @@ const useStyles = createStyles((theme) => ({
     },
 }));
 
-const CollectionSideBar = ({ filteredBrands, setFilteredBrands, sneakers, setSneakers }) => {
+const CollectionSideBar = ({ filteredBrands, setFilteredBrands, sneakers, setSneakers, category }) => {
 
-    const brandsInit = products.map(item => item.brand)
+    const brandsInit = products.filter(item => item.category === category || item.category === 'Unisex').map(item => item.brand)
     const brands = [...new Set(brandsInit)]
     const [min, setMin] = useState(40)
     const [max, setMax] = useState(400)
@@ -47,7 +47,7 @@ const CollectionSideBar = ({ filteredBrands, setFilteredBrands, sneakers, setSne
     const masterFilter = () => {
         setSneakers(products
                         .slice()
-                        .filter(item => item.category === 'Men')
+                        .filter(item => item.category === category || item.category === 'Unisex')
                         .filter(item => item.brand === (filteredBrands ? filteredBrands : item.brand))
                         .filter(item => (item.salePrice || item.price) > min && (item.salePrice || item.price) < max)
                     )

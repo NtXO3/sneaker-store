@@ -1,13 +1,18 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import Logo from '../assets/logo.svg'
 import UserAvatar from '../assets/image-avatar.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBasketShopping } from '@fortawesome/free-solid-svg-icons'
 import CartModal from './CartModal';
 import { Link } from 'react-router-dom';
-import { AppContext } from '../App';
+import { UserAuth } from '../AuthContext';
+import Register from './Register';
+import { useNavigate } from 'react-router-dom';
+import NavAccount from './NavAccount';
 
 const Nav = ({ setCartOpen, cartOpen, toggleCart, closeModal }) => {
+    const { user, signUp, logIn, logOut} = UserAuth()
+    let navigate = useNavigate()
 
     return (
         <nav>
@@ -47,7 +52,14 @@ const Nav = ({ setCartOpen, cartOpen, toggleCart, closeModal }) => {
                         }
                     </div>
                     <div className="nav__account">
-                        <img src={UserAvatar} alt="" className="nav__user" />
+                        {
+                            user?.email ?
+                            <NavAccount />
+                            :
+                            <>
+                                <Register />
+                            </>
+                        }
                     </div>
                 </div>
             </div>

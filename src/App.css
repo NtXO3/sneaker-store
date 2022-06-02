@@ -31,6 +31,53 @@ nav {
   width: 40px;
 }
 
+.nav__user--blank {
+  width: 40px;
+  height: 40px;
+  background-color: hsl(26, 100%, 55%);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.nav__login {
+  color: hsl(219, 9%, 45%);
+  font-size: 15px;
+  transition: all 100ms ease;
+  border: none;
+  border-bottom: 2px solid transparent;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.nav__login:hover {
+  color:hsl(220, 13%, 13%);
+  border-bottom: 2px solid hsl(220, 13%, 13%);
+}
+
+.nav__register {
+  background-color: hsl(26, 100%, 55%);
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.1rem;
+  margin-left: 1rem;
+  font-weight: bold;
+  border-radius: 12px;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: -1px 3px 10px 1px hsla(26, 100%, 55%, 0.219);
+  transition: all 300ms ease;
+}
+
+.nav__register:hover {
+  background-color: hsl(26, 100%, 63%);
+}
+
 .nav__anchor {
   margin-left: 2rem;
   color: hsl(219, 9%, 45%);
@@ -65,13 +112,13 @@ nav {
 
 .cart__modal {
   position: absolute;
-  width: 360px;
+  width: 380px;
   right: -100%;
   top: 40px;
   box-shadow: 1px 1px 16px 8px rgba(0, 0, 0, 0.164);
   background-color: #fff;
   border-radius: 12px;
-  z-index: 5;
+  z-index: 500;
 }
 
 .cart__img {
@@ -128,6 +175,7 @@ nav {
 
 .cart__item--info {
   margin-right: 16px;
+  width: calc(90% - 110px)
 }
 
 .cart__delete {
@@ -139,7 +187,7 @@ nav {
 }
 
 .cart__delete:hover {
-  color: hsl(220, 13%, 13%);
+  color: rgb(223, 54, 54)
 }
 
 .modal__btn {
@@ -170,6 +218,144 @@ nav {
   text-align: center;
   margin: 3rem 0;
   color: hsl(220, 13%, 13%);
+}
+
+.recommended__sneakers {
+  display: flex;
+  justify-content: space-between;
+}
+
+.recommended__row {
+  max-width: 1200px;
+}
+
+.auth__modal--wrapper {
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mantine-Modal-header {
+  padding: 1.5rem 2rem 0 2rem;
+}
+
+.mantine-Modal-title {
+  color: hsl(220, 13%, 13%);
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.auth__modal--para {
+  color: hsl(219, 9%, 45%);
+  width: 100%;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  font-size: 15px;
+}
+
+.modal__cta {
+  color: hsl(26, 100%, 55%);
+  font-weight: 700;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.modal__cta:hover {
+  text-decoration: underline;
+}
+
+.input__label {
+  margin-bottom: 4px;
+  font-size: 18px;
+}
+
+.auth__modal--input {
+  border-radius: 4px;
+  outline: none;
+  border: 2px solid hsl(225, 25%, 94%);
+  background-color: hsl(225, 25%, 94%);
+  font-size: 16px;
+  padding: 10px 24px 10px 8px;
+  width: 100%;
+  transition: all 300ms ease;
+  color: hsl(220, 13%, 13%);
+  margin-bottom: 16px;
+}
+
+.auth__modal--btn {
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.auth__modal--input:focus, .auth__modal--input:hover {
+  border: 2px solid hsl(26, 100%, 55%);
+}
+
+.modal__checkbox {
+  font-size: 16px;
+  color: hsl(219, 9%, 45%);
+}
+
+.fa-spinner {
+  color: hsl(26, 100%, 55%);
+  font-size: 40px;
+  padding: 4rem;
+  animation: spinner 600ms infinite linear;
+}
+
+.modal__error {
+  color: red;
+  margin-bottom: 8px;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.popover__menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu__link {
+  color: hsl(219, 9%, 45%);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 16px 16px;
+}
+
+.menu__link:hover {
+  background-color: hsl(223, 64%, 98%);
+}
+
+.nav__account {
+  display: flex;
+  align-items: center;
+}
+
+.nav__login--skeleton {
+  width: 48px;
+  height: 16px;
+  border-radius: 4px;
+  background-color: #ccc;
+  margin-right: 16px;
+}
+
+.nav__register--skeleton {
+  width: 100px;
+  height: 28px;
+  background-color: #ccc;
+  border-radius: 4px;
 }
 
 /* Product Page */
@@ -251,7 +437,12 @@ nav {
   font-size: 44px;
   line-height: 1.1;
   color: hsl(220, 13%, 13%);
-  margin-bottom: 32px;
+  margin-bottom: 8px;
+}
+
+.product__category {
+  color: hsl(219, 9%, 45%);
+  margin-bottom: 24px;
 }
 
 .product__para {
@@ -673,6 +864,35 @@ footer {
   overflow: hidden;
   padding: 1.5rem;
 }
+
+.sneaker__product--skeleton {
+  width: 25%;
+  padding: 1.5rem;
+}
+
+.sneaker__img--skeleton {
+  height: 280px;
+  width: 100%;
+  border-radius: 20px;
+  background-color: #ccc;
+  margin-bottom: 16px;
+}
+
+.sneaker__brand--skeleton {
+  height: 16px;
+  width: 80px;
+  background-color: #ccc;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+.sneaker__title--skeleton {
+  height: 20px;
+  width: 120px;
+  background-color: #ccc;
+  border-radius: 20px;
+}
+
 .sneaker__product:hover .sneaker__img {
   transform: scale(1.1);
 }
@@ -765,4 +985,108 @@ footer {
 
 .mantine-Slider-track, .mantine-Slider-bar  {
   background-color: hsl(26, 100%, 55%) !important;
+}
+
+#hero__home {
+  position: relative;
+}
+
+.slideshow__wrapper {
+  height: 60vh;
+  width: 100%;
+  position: relative;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  white-space: nowrap;
+  -ms-overflow-style: none; 
+  scrollbar-width: none;
+  overflow-y: hidden;
+}
+
+.slideshow__wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.hero__slideshow--frame {
+  width: 100vw;
+  height: 60vh;
+  position: relative;
+  display: inline-block;
+}
+
+.home__slideshow--img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home__backdrop {
+  background-color: rgba(0, 0, 0, 0.164);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.slideshow__btn {
+  position: absolute;
+  color: #fff;
+  font-size: 32px;
+  background-color: transparent;
+  border: none;
+  color: hsl(26, 100%, 55%);
+  background-color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 20;
+  transition: all 300ms ease;
+}
+
+.slideshow__btn:hover {
+  background-color: hsl(223, 64%, 98%);
+}
+
+.slideshow__btn:active {
+  transform: scale(0.8);
+}
+
+.slideshow__left {
+  top: 50%;
+  left: 2%;
+}
+
+.slideshow__right {
+  top: 50%;
+  right: 2%;
+}
+
+.featured__sneakers--wrapper {
+  position: relative;
+}
+
+.featured__sneakers {
+  width: 100%;
+  position: relative;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  white-space: nowrap;
+  -ms-overflow-style: none; 
+  scrollbar-width: none;
+  overflow-y: hidden;
+}
+
+.featured__sneakers::-webkit-scrollbar {
+  display: none;
+}
+
+#featured__sneaker {
+  display: inline-flex;
+  flex-direction: column;
+  position: relative;
+  white-space: pre-line;
+}
+
+#featured__sneaker .sneaker__img--wrapper {
+  height: 240px;
 }

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Sneaker = ({ sneaker }) => {
+const Sneaker = ({ sneaker, slider }) => {
     return (
-        <div className="sneaker__product">
+        <div className="sneaker__product" id={slider ? 'featured__sneaker' : ''}>
             <Link to={`/sneakers/${sneaker.url}`}>
                 <figure className="sneaker__img--wrapper">
                     <img src={sneaker.images[0]} alt="" className="sneaker__img" />
@@ -17,7 +17,6 @@ const Sneaker = ({ sneaker }) => {
                 :
                 <Link to={`/sneakers/${sneaker.url}`}><h3 className="sneaker__price">€{sneaker.price}</h3></Link>
             }
-            
         </div>
     );
 }

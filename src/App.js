@@ -7,6 +7,12 @@ import products from './products'
 import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom';
 import Collections from './pages/Collections';
 import MenCollection from './pages/MenCollection';
+import WomenCollection from './pages/WomenCollection';
+import Home from './pages/Home';
+import ScrollToTop from './components/ScrollToTop';
+import { AuthContextProvider } from './AuthContext';
+import Register from './components/Register';
+import NavAccount from './components/NavAccount';
 
 export const AppContext = createContext()
 
@@ -51,16 +57,22 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <div className="App">
-        <AppContext.Provider value={{cart, setCart, addToCart, removeFromCart, toggleCart}}>
-          <Nav setCartOpen={setCartOpen} cartOpen={cartOpen} toggleCart={toggleCart} closeModal={closeModal}/>
-          <Routes>
-            <Route path='/sneakers/:url' element={<ProductPage products={products}/>} />
-            <Route path='/collections' element={<Collections/>} />
-            <Route path='/collections/men' element={<MenCollection products={products} />} />
-          </Routes>
-          <Footer />
-        </AppContext.Provider>
+        <AuthContextProvider>
+          <AppContext.Provider value={{cart, setCart, addToCart, removeFromCart, toggleCart}}>
+            <Nav setCartOpen={setCartOpen} cartOpen={cartOpen} toggleCart={toggleCart} closeModal={closeModal}/>
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/sneakers/:url' element={<ProductPage products={products}/>} />
+              <Route path='/collections' element={<Collections/>} />
+              <Route path='/collections/men' element={<MenCollection products={products} />} />
+              <Route path='/collections/women' element={<WomenCollection products={products} />} />
+              <Route path='/modal' element={<NavAccount />} />
+            </Routes>
+            <Footer />
+          </AppContext.Provider>
+        </AuthContextProvider>
       </div>
     </Router>
   );
