@@ -11,8 +11,8 @@ import WomenCollection from './pages/WomenCollection';
 import Home from './pages/Home';
 import ScrollToTop from './components/ScrollToTop';
 import { AuthContextProvider } from './AuthContext';
-import Register from './components/Register';
 import NavAccount from './components/NavAccount';
+import Account from './pages/Account';
 
 export const AppContext = createContext()
 
@@ -69,6 +69,7 @@ function App() {
               <Route path='/collections/men' element={<MenCollection products={products} />} />
               <Route path='/collections/women' element={<WomenCollection products={products} />} />
               <Route path='/modal' element={<NavAccount />} />
+              <Route path='/account/*' element={<Account />} />
             </Routes>
             <Footer />
           </AppContext.Provider>

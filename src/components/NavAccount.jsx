@@ -31,7 +31,7 @@ const NavAccount = () => {
         spacing={0}
         >
         <div className="popover__menu">
-            <Link to='/account' className='menu__link'><FontAwesomeIcon icon={faUser}/>&nbsp;&nbsp;Account</Link>
+            <Link to='/account/wishlist' className='menu__link'><FontAwesomeIcon icon={faUser}/>&nbsp;&nbsp;Account</Link>
             <p className='menu__link' onClick={handleLogOut}><FontAwesomeIcon icon={faArrowRightFromBracket}/>&nbsp;&nbsp;Logout</p>
         </div>
         </Popover>

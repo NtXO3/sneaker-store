@@ -9,7 +9,12 @@ const Recommended = ({ products, currProduct}) => {
                     <h1 className="section__title">Aanbevolen Sneakers <span className="orange">Voor Jou</span> </h1>
                     <div className="recommended__sneakers">
                         {
-                            products.slice().filter(item => item.category === currProduct.category || 'Unsiex').filter(item => item.price < currProduct.price + 50).slice(0, 4).map(item => <Sneaker key={item.id} sneaker={item} />)
+                            products.slice()
+                                .filter(item => item.category === currProduct.category || 'Unsiex')
+                                .filter(item => item.price < currProduct.price + 50)
+                                .filter(item => item.id !== currProduct.id)
+                                .slice(0, 4)
+                                .map(item => <Sneaker key={item.id} sneaker={item} />)
                         }
                     </div>
                 </div>

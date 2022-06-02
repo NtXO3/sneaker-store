@@ -190,6 +190,10 @@ nav {
   color: rgb(223, 54, 54)
 }
 
+.cart__item:hover {
+  background-color: hsl(223, 64%, 98%);
+}
+
 .modal__btn {
   display: flex;
   justify-content: center;
@@ -448,7 +452,18 @@ nav {
 .product__para {
   color:hsl(219, 9%, 45%);
   line-height: 1.6;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+}
+
+.product__save {
+  color: hsl(219, 9%, 45%);
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+
+.product__save:hover {
+  color: hsl(26, 100%, 55%);
 }
 
 .product__price--wrapper {
@@ -591,6 +606,8 @@ nav {
   font-size: 18px;
   margin-right: 12px;
 }
+
+
 
 /* FAQ */
 
@@ -1089,4 +1106,169 @@ footer {
 
 #featured__sneaker .sneaker__img--wrapper {
   height: 240px;
+}
+
+/* Account */
+
+#account__sidebar {
+  width: 18%;
+}
+
+.account__sidebar--wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.sidebar__title {
+  font-size: 32px;
+  margin-bottom: 1rem;
+  color: hsl(220, 13%, 13%);
+}
+
+.account__divider {
+  height: 2px;
+  background-color: hsl(220, 14%, 75%);
+  margin-bottom: 1rem;
+}
+
+.account__sidebar--link {
+  background-color: transparent;
+  border: none;
+  padding: 0.8rem 0.2rem;
+  font-size: 20px;
+  text-align: left;
+  font-weight: bold;
+  color: hsl(220, 13%, 13%);
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.account__sidebar--link:hover {
+  background-color: hsl(223, 64%, 98%);
+}
+
+#selected-account {
+  background-color: hsl(223, 64%, 98%);
+}
+
+.account__row {
+  justify-content: start;
+}
+
+.account__settings {
+  width: 50%;
+  margin-left: 10rem;
+}
+
+.account__title {
+  margin-bottom: 1rem;
+  font-size: 40px;
+}
+
+.account__input--wrapper {
+  margin: 2rem 0;
+}
+
+.account__info--title {
+  color: hsl(220, 13%, 13%);
+  margin-bottom: 0.5rem;
+}
+
+.account__edit {
+  background-color: hsl(223, 64%, 98%);
+  color: hsl(220, 13%, 13%);
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  font-size: 16px;
+  border-radius: 8px;
+  transition: all 300ms ease;
+}
+
+.account__edit:hover {
+  background-color: hsl(220, 14%, 75%);
+}
+
+.account__field {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.account__input {
+  width: 70%;
+  outline: none;
+  padding: 10px 16px;
+  background-color: hsl(223, 64%, 98%);
+  border: 2px solid transparent;
+  border-radius: 20px;
+  font-size: 16px;
+  margin-top: 8px;
+  color: hsl(219, 9%, 45%);
+  transition: all 300ms ease;
+}
+
+.account__input:hover, .account__input:focus {
+  background-color: hsl(233, 22%, 93%);
+  border: 2px solid hsl(26, 100%, 55%);
+}
+
+.account__buttons--wrapper {
+  display: flex;
+}
+
+.account__edit--primary {
+  background-color: hsl(26, 100%, 55%);
+  color: #fff;
+  margin-left: 1rem;
+  transition: all 300ms ease;
+}
+
+.account__edit--primary:hover {
+  background-color: hsl(26, 100%, 63%);
+}
+
+.account__info--value {
+  color: hsl(219, 9%, 45%);
+  margin: 0.5rem 0;
+}
+
+.fa-spinner-account {
+  color: #fff;
+  padding: 0;
+  animation: spinner 600ms infinite linear;
+  font-size: inherit;
+}
+
+.account__field--password {
+  width: 80%;
+}
+
+.account__btn {
+  background-color: rgb(245, 53, 53);
+  padding: 12px 18px;
+  box-shadow: -1px 3px 28px 1px rgba(245, 53, 53, 0.178);
+  transition: all 300ms ease;
+}
+.account__btn:hover {
+  background-color: rgb(223, 54, 54);
+}
+
+.wishlist {
+  width: 67%;
+  margin-left: 5rem;
+}
+
+.sneakers__wishlist {
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 3rem;
+}
+
+.sneaker__wishlist {
+  padding: 0;
+  width: 22%;
 }
