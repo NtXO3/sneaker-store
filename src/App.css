@@ -2153,7 +2153,7 @@ Media Optimization
   }
 
   .sneaker__product, .sneaker__product--skeleton {
-    width: 90%;
+    width: 80%;
   }
 
   .featured__btn {
@@ -2246,6 +2246,7 @@ Media Optimization
     width: 100%;
     justify-content: center;
     margin-bottom: 4rem;
+    margin-left: 0;
   }
 
   #collection__sidebar {
