@@ -13,6 +13,8 @@ import ScrollToTop from './components/ScrollToTop';
 import { AuthContextProvider } from './AuthContext';
 import NavAccount from './components/NavAccount';
 import Account from './pages/Account';
+import ProtectedRoute from './components/ProtectedRoute';
+import Support from './pages/Support';
 
 export const AppContext = createContext()
 
@@ -69,7 +71,8 @@ function App() {
               <Route path='/collections/men' element={<MenCollection products={products} />} />
               <Route path='/collections/women' element={<WomenCollection products={products} />} />
               <Route path='/modal' element={<NavAccount />} />
-              <Route path='/account/*' element={<Account />} />
+              <Route path='/account/*' element={<ProtectedRoute><Account /></ProtectedRoute>} />
+              <Route path='/support' element={<Support />} />
             </Routes>
             <Footer />
           </AppContext.Provider>

@@ -68,7 +68,7 @@ const ProductPage = ({ products, id }) => {
 
     useEffect(() => {
         console.log(userWishlist)
-        for (let i = 0; i < userWishlist.length; ++i) {
+        for (let i = 0; i < userWishlist?.length; ++i) {
             if (userWishlist[i].id === product.id) {
                 return setSaved(true)
             } else {

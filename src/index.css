@@ -5,6 +5,11 @@
   font-family: 'Kumbh Sans', sans-serif;
 }
 
+::selection { 
+  background: rgb(255, 193, 142); 
+  color: #fff;
+}
+
 li {
   list-style: none;
 }
